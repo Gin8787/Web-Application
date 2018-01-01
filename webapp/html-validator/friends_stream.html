@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Grumblr</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  
+  <link href="../../static/profile.css" rel="stylesheet">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body class="body-style">
+<!--Nav bar-->
+
+<nav class="navbar-fixed-top bg-info navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+    <!--For collapsed navbar-->
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand navbar-brand-style" href="/grumblr/index.html">Grumblr</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/">Home</a></li>
+        <li><a href="#">Contact us</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">
+          <span class="glyphicon glyphicon-user"></span>
+          Profile<span class="caret"></span></a>
+          <ul class="dropdown-menu dropdown-menu-bg">
+            <li><a href="/grumblr/profile/aaa">Go to my page</a></li>
+            <li>
+              <a href="/grumblr/edit/">Edit</a>
+            </li>
+            <li>
+              <a href="/grumblr/friends_stream">My friends</a>
+            </li>
+            <li>
+              <a href="/change_password">Change Password</a>
+            </li>
+            <li>
+              <a href="/grumblr/logout">Log out</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="col-sm-4 text-center" >
+    <img src="/grumblr/profile_picture/aaa" class="img-circle" alt="User picture" width="110" height="100">
+
+    <ul class="list-group list-group-style">
+        <li class="list-group-item">User Name: aaa</li>
+        <li class="list-group-item">First Name: aa</li>
+        <li class="list-group-item">Last Name: aaa</li>
+    </ul>
+ </div>
+
+ <div class="col-sm-6">
+ 	 <div class="container">
+      <div class="panel-group panel-group-style">
+
+        
+        <img src="/grumblr/profile_picture/bbb" class="img-circle profile-picture-style" alt="User Pictures" width="50" height="45">
+        <span><a href="/grumblr/profile/bbb">bbb</a></span>
+        <div class="panel panel-default panel-style">
+          <div class="panel-heading">
+            Oct. 7, 2017, 12:09 a.m.
+
+            <span class="thumb-num-style">20</span>
+            <a href="#">
+              <span class="glyphicon glyphicon-heart heart-style"></span>
+            </a>
+          </div>
+
+          <div class="panel-body">
+          bbb&#39;s first message
+          </div>
+        </div>
+        
+
+      </div>
+    </div>
+ </div>
+
+
+</body>
+</html>

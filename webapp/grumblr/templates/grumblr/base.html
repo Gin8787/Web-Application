@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{%block title%}Grumblr{%endblock%}</title>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+  {%block css%}
+  <link href='../../static/index.css' rel='stylesheet'>
+  {%endblock%}
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+  <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
+  {%block js%}
+
+  {%endblock%}
+</head>
+
+<body class='body-style'>
+<!--Nav bar-->
+{% block navbar %}
+<nav class='navbar-fixed-top bg-info navbar-default'>
+  <div class='container-fluid'>
+    <div class='navbar-header'>
+    <!--For collapsed navbar-->
+      <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='#myNavbar'>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand navbar-brand-style" href="{% url 'home' %}">Grumblr</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="#">Contact us</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">
+          <span class="glyphicon glyphicon-user"></span>
+          Profile<span class="caret"></span></a>
+          <ul class="dropdown-menu dropdown-menu-bg">
+            <li><a href="{% url 'profile' request.user.username %}">Go to my page</a></li>
+            <li>
+              <a href="{% url 'edit' %}">Edit</a>
+            </li>
+            <li>
+              <a href="{% url 'friends_stream' %}">My friends</a>
+            </li>
+            <li>
+              <a href="{% url 'change_password' %}">Change Password</a>
+            </li>
+            <li>
+              <a href="{% url 'logout' %}">Log out</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+{% endblock %}
+
+{% block content %}{% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<div id='{{post_id}}'>
+        <img src={% url 'picture' user.username %} class='img-circle profile-picture-style' alt='User Pictures' width='50' height='45'>
+        <span><a href={% url 'profile' user.username %}>{{user.username}}</a></span>
+        <div class='panel panel-default panel-style'>
+            <div class='panel-heading'>
+            {{time}}
+
+                <span class='thumb-num-style'>20</span>
+                <a href='#'>
+                <span class='glyphicon glyphicon-heart heart-style'></span>
+                </a>
+            </div>
+
+            <div class='panel-body'>
+            {{post}}
+            </div>
+            <hr>
+            <div class='panel-body'>
+            <p>Comment here:</p><input class='form-control' id='comment-field{{post_id}}' type='text'>
+            <span>
+                <button id='add-comment-btn{{post_id}}'>Comment</button>
+            </span>
+            </div>
+
+            <div class='panel-footer'>
+                <div id='comment-list{{post_id}}'></div>
+            </div>
+
+
+        </div>
+</div>

@@ -1,0 +1,45 @@
+{% extends "grumblr/base.html" %}
+{%block title%}Grumblr index{%endblock%}
+{%block css%}
+  <link href="../../static/index.css" rel="stylesheet">
+{%endblock%}
+{%block js%}
+<script src="../../static/js/index.js"></script>
+{%endblock%}
+{%block content%}
+
+<div class="row">
+  <div class="col-sm-3">
+  </div>
+
+  <div class="col-sm-6">
+    <p class="say-style">Say something:</p>
+    <input class="form-control comment-style" id="post-field" type="text" maxlength="42">
+    <br>
+    <button type="submit" class="btn btn-info post-button-style" id="post-btn">Post</button>
+
+    <hr class="hr-style">
+  </div>
+
+  <div class="col-sm-3">
+  </div>
+
+</div>
+
+<div class="row">
+ 
+  <div class="col-sm-3">
+  </div>
+
+  <div class="col-sm-6">
+
+    <div id="post-list"></div>
+
+  </div>
+
+  <div class="col-sm-3">
+  </div>
+
+</div>
+
+{%endblock%}

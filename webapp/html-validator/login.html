@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Grumblr login</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  
+  <link href="../../static/login.css" rel="stylesheet">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body class="body-style">
+<!--Nav bar-->
+
+<nav class="navbar-fixed-top bg-info navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <!--For collapsed navbar-->
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand navbar-brand-style" href="/grumblr/index.html" >Grumblr</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/grumblr/index.html">Home</a></li>
+        <li><a href="#">Contact us</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/grumblr/sign_up"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      </ul>
+    </div>
+  </div>
+</nav> 
+
+
+
+<div class="container">
+  
+  <h3 class="text-center">Log in to Grumblr</h3>
+
+  
+
+  <form class="form-signin" action="/grumblr/login" method="post">
+    <label for="inputUsername" class="sr-only">User Name</label>
+    <input type="text" id="inputUsername" class="form-control" placeholder="Username" required autofocus name="username">
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required 
+    name="password">
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" value="remember-me"> Remember me
+      </label>
+    </div>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button> 
+    <input type='hidden' name='csrfmiddlewaretoken' value='7zzTwACu6LOeandbjCBDfHztlxO9oQ01ZsA8OxNGuVLk9W8bdWGzpJdwjY7W23EA' />
+  </form>
+
+</div> <!-- /container -->
+
+<div class="row text-center height:50px">
+  <p>Forget the password? <a href="/get_reset_email">Reset password!</a></p>      
+</div> 
+
+<div class="row text-center height:50px">
+  <p>Don't hava an account? <a href="/grumblr/sign_up">Sign up now!</a></p>      
+</div> 
+
+
+</body>
+</html>

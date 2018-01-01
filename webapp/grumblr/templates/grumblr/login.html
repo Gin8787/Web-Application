@@ -1,0 +1,66 @@
+{% extends "grumblr/base.html" %}
+{%block title%}Grumblr login{% endblock %}
+{%block css%}
+  <link href="../../static/login.css" rel="stylesheet">
+{%endblock%}
+
+{%block navbar%}
+<nav class="navbar-fixed-top bg-info navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <!--For collapsed navbar-->
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand navbar-brand-style" href="{% url 'home'%}" >Grumblr</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="{% url 'home'%}">Home</a></li>
+        <li><a href="#">Contact us</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="{% url 'sign_up.html'%}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      </ul>
+    </div>
+  </div>
+</nav> 
+{%endblock%}  
+
+{%block content%}
+<div class="container">
+  
+  <h3 class="text-center">Log in to Grumblr</h3>
+
+  {% if form.errors %}
+    <p class="global-error-style">Incorrect user name and password</p>
+  {% endif %}
+
+  <form class="form-signin" action="{% url 'login'%}" method="post">
+    <label for="inputUsername" class="sr-only">User Name</label>
+    <input type="text" id="inputUsername" class="form-control" placeholder="Username" required autofocus name="username">
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required 
+    name="password">
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" value="remember-me"> Remember me
+      </label>
+    </div>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button> 
+    {% csrf_token %}
+  </form>
+
+</div> <!-- /container -->
+
+<div class="row text-center height:50px">
+  <p>Forget the password? <a href="{% url 'get_reset_email'%}">Reset password!</a></p>      
+</div> 
+
+<div class="row text-center height:50px">
+  <p>Don't hava an account? <a href="{% url 'sign_up.html'%}">Sign up now!</a></p>      
+</div> 
+{%endblock%}

@@ -1,0 +1,50 @@
+{% extends "Grumblr/base.html" %}
+{% block titile %}Grumblr follower stream{% endblock %}
+{%block css%}
+  <link href="../../static/profile.css" rel="stylesheet">
+{%endblock%}
+{%block js%}
+  <script src="../../static/js/friend_stream.js"></script>
+{%endblock%}
+
+{% block content %}
+<div class="col-sm-4 text-center" >
+    <img src="{% url 'picture' profile.user.username %}" class="img-circle" alt="User picture" width="110" height="100">
+
+    <ul class="list-group list-group-style">
+        <li class="list-group-item">User Name: {{profile.user.username}}</li>
+        <li class="list-group-item">First Name: {{profile.user.first_name}}</li>
+        <li class="list-group-item">Last Name: {{profile.user.last_name}}</li>
+    </ul>
+ </div>
+
+ <div class="col-sm-6">
+ 	 <div class="container">
+         <!--
+      <div class="panel-group panel-group-style">
+
+        {% for post in posts %}
+        <img src="{% url 'picture' post.user.username %}" class="img-circle profile-picture-style" alt="User Pictures" width="50" height="45">
+        <span><a href="{% url 'profile' post.user.username %}">{{post.user.username}}</a></span>
+        <div class="panel panel-default panel-style">
+          <div class="panel-heading">
+            {{post.time}}
+
+            <span class="thumb-num-style">20</span>
+            <a href="#">
+              <span class="glyphicon glyphicon-heart heart-style"></span>
+            </a>
+          </div>
+
+          <div class="panel-body">
+          {{post}}
+          </div>
+        </div>
+        {% endfor %}
+
+      </div>
+      -->
+        <div id="post-list" name="{{visted_user.username}}"></div>
+    </div>
+ </div>
+{% endblock %}

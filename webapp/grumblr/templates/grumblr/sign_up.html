@@ -1,0 +1,123 @@
+{% extends "grumblr/base.html" %}
+{%block title%}Grumblr sign up{%endblock%}
+{%block css%}
+  <link href="../../static/sign_up.css" rel="stylesheet">
+{%endblock%}
+  
+{%block navbar%}
+<!--Nav bar-->
+<nav class="navbar-fixed-top bg-info navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <!--For collapsed navbar-->
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand navbar-brand-style" href="{% url 'home' %}">Grumblr</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="#">Contact us</a></li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="{% url 'login'%}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+{%endblock%}
+
+{%block content%}
+<div class="container">
+  <h3 class="text-center">Join Grumblr now!</h3>
+</div>
+
+<!--
+{% if errors %}
+    {% for error in errors %}
+    <p class="error-style">{{error}}</p>
+    {% endfor %}
+{% endif %}
+-->
+
+<div class="container">
+  <form class="form-horizontal form-group-default" action="{% url 'register' %}" method="post">
+
+    <!--
+    <div class="form-group">
+      <label class="control-label col-sm-offset-2 col-sm-2">Email:</label>
+      <div class="col-sm-4">
+        <input type="email" class="form-control" placeholder="Enter email" name="email">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-offset-2 col-sm-2">Fisrt Name:</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" placeholder="Enter First Name" name="firstname">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-offset-2 col-sm-2">Last Name:</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" placeholder="Enter Last Name" name="lastname">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-offset-2 col-sm-2">User Name:</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" placeholder="Enter User Name" name="username">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-offset-2 col-sm-2">Password:</label>
+      <div class="col-sm-4">          
+        <input type="password" class="form-control" placeholder="Enter password" name="pwd">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-offset-2 col-sm-2">Confirm Password:</label>
+      <div class="col-sm-4">          
+        <input type="password" class="form-control" placeholder="Confirm password" name="confirm_pwd">
+      </div>
+    </div>
+    -->
+    
+    <!-- Global Error message -->
+    {% for error in form.non_field_errors %}
+    <p class="error-style">{{error}}</p>
+    {% endfor %}
+
+    <!-- Display fields of form -->
+    {% for field in form.visible_fields %}
+    <div class="form-group">
+      <label class="control-label col-sm-offset-2 col-sm-2">{{field.label_tag}}:</label>
+      <div class="col-sm-4">          
+        <div class="input-textarear-style">{{field}}</div>
+      </div>
+      <span ><p class="error-style">{{field.errors}}</p></span>
+    </div>
+    {% endfor %}
+
+    {% for field in form.hidden_fields %}
+    {{field}}
+    {% endfor %}
+
+    <div class="form-group text-center">        
+      <div class="col-sm-offset-4 col-sm-4 text-align: center">
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+      </div>
+    </div>
+    {% csrf_token %}
+  </form>
+</div>
+{%endblock%}

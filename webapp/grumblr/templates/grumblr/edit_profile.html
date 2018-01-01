@@ -1,0 +1,51 @@
+{% extends "grumblr/base.html" %}
+{%block title%}Grumblr profile{%endblock%}
+{%block css%}
+  <link href="../../static/profile.css" rel="stylesheet">
+{%endblock%}
+
+{% block content %}
+<div class="col-sm-4 text-center" >
+  <img src="{% url 'picture' profile.user.username %}" class="img-circle user-profile-picture-style" alt="User picture" width="110" height="100">
+  <ul class="list-group list-group-style">
+    <li class="list-group-item">User Name: {{profile.user.username}}</li>
+    <li class="list-group-item">First Name: {{profile.user.first_name}}</li>
+    <li class="list-group-item">Last Name: {{profile.user.last_name}}</li>
+    <li class="list-group-item">age: {{profile.age}}    
+    </li>
+  </ul>
+  <p>Biology:</p>
+  <div class="well well-sm">{{profile.bio}}</div>
+</div>
+
+<div class="col-sm-6">
+  <div class="container">
+    <form class="form-hrizontal form-group-default" action="{% url 'edit' %}" enctype="multipart/form-data" method="post">
+
+      {% for field in form.visible_fields %}	
+      <div class="form-group">
+  			{{field.label_tag}}:
+  		<div>
+  			{{field}}
+  		</div>
+      </div>
+      {% endfor %}
+
+      
+    
+
+      <div class="form-group text-center">
+      	<div class="col-sm-offset-4 col-sm-4 text-aling:center">
+      		<button class="btn btn-lg btn-primary btn-block" type="submit">Edit</button>
+      	</div>
+      </div>
+
+      {% csrf_token %}
+    </form> 
+
+  </div>
+</div>
+
+<div class="col-sm-2">
+  </div>
+{% endblock %}

@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Grumblr sign up</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  
+  <link href="../../static/index.css" rel="stylesheet">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body class="body-style">
+<!--Nav bar-->
+
+<!--Nav bar-->
+<nav class="navbar-fixed-top bg-info navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <!--For collapsed navbar-->
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand navbar-brand-style" href="/grumblr/index.html">Grumblr</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/grumblr/index.html">Home</a></li>
+        <li><a href="#">Contact us</a></li>
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="container">
+  <h4 class="text-center">Reset your password!</h4>
+</div>
+
+<div class="container">
+  <form class="form-horizontal form-group-default" action="/reset_password/ddd" method="post">
+
+  	
+    <p class="error-style text-center">Password doesn&#39;t match!</p>
+    
+
+    <!-- Display fields of form -->
+    
+    <div class="form-group">
+      <div class="col-sm-4 col-sm-offset-4"><label for="id_new_password">Password:</label>: </div>
+      <div class="col-sm-4 col-sm-offset-4">          
+        <input type="password" name="new_password" required id="id_new_password" maxlength="200" />
+      </div>
+      <p class="error-style"></p>
+    </div>
+    
+    <div class="form-group">
+      <div class="col-sm-4 col-sm-offset-4"><label for="id_confirm_new_password">Confirm password:</label>: </div>
+      <div class="col-sm-4 col-sm-offset-4">          
+        <input type="password" name="confirm_new_password" required id="id_confirm_new_password" maxlength="200" />
+      </div>
+      <p class="error-style"></p>
+    </div>
+    
+
+
+    <div class="form-group text-center">        
+      <div class="col-sm-offset-4 col-sm-4 text-align: center">
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Reset password</button>
+      </div>
+    </div>
+    <input type='hidden' name='csrfmiddlewaretoken' value='RuKtg0UCkDXbjcfoMIg0dDdXpctmRKvIJnLIyX5OINUhiLaoG2lWnFR0nDM9vX9h' />
+  </form>
+</div>
+
+
+</body>
+</html>

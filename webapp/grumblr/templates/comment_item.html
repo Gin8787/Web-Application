@@ -1,0 +1,6 @@
+<div id='{{comment_id}}'>
+    <img src={% url 'picture' user.username %} class='img-circle' profile-picture-style' alt='User Pictures' width='30' height='27'>
+    <span><a href={% url 'profile' user.username %}>{{user.username}}</a></span>
+    <span class=='time'>{{ time }}</span>
+    <div>{{comment}}</div>
+</div>

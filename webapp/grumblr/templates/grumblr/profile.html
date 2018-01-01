@@ -1,0 +1,58 @@
+{% extends "Grumblr/base.html" %}
+{%block title%}Grumblr profile{%endblock%}
+{%block css%}
+  <link href="../../static/profile.css" rel="stylesheet">
+{%endblock%}
+{%block js%}
+  <script src="../../static/js/profile.js"></script>
+{%endblock%}
+  
+{%block content%}
+<div class="row">
+  <!--User Information-->
+  <div class="col-sm-4 text-center" >
+    <img src="{% url 'picture' visted_user.username %}" class="img-circle user-profile-picture-style" alt="User picture" width="110" height="100">
+
+    {% if follow_btn == 0 %}
+    <p></p>
+    {% else %}
+      {% if requestUser in friends %}
+      <a class="btn btn-info" href="{% url 'unfollow' visted_user.username %}">Unfollow</a>
+      {% else %}
+      <a class="bt btn-info" href="{% url 'follow' visted_user.username %}">Follow</a>
+      {% endif %}
+    {% endif %}
+
+      <ul class="list-group list-group-style">
+        <li class="list-group-item">User Name: {{visted_user.username}}</li>
+        <li class="list-group-item">First Name: {{visted_user.first_name}}</li>
+        <li class="list-group-item">Last Name: {{visted_user.last_name}}</li>
+        <li class="list-group-item">age: {{profile.age}}</li>
+      </ul>
+      <p>Biology:</p>
+      <div class="well well-sm">{{profile.bio}}</div>
+  </div>
+  
+
+  <div class="col-sm-6">
+      
+      <p class="say-style">Say something:</p>
+      <input class="form-control comment-style" id="post-field" type="text" maxlength="42">
+      <br>
+    <button type="submit" class="btn btn-info post-button-style" id="post-btn">Post</button>
+  
+  <hr class="hr-style">
+  <!--User's Posted messages-->   
+
+    <div class="container">
+      
+      <div id="post-list" name="{{visted_user.username}}"></div>
+    </div>
+
+  </div>
+
+  <div class="col-sm-2">
+  </div>
+
+</div>
+{%endblock%}

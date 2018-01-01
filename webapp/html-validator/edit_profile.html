@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Grumblr profile</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  
+  <link href="../../static/profile.css" rel="stylesheet">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body class="body-style">
+<!--Nav bar-->
+
+<nav class="navbar-fixed-top bg-info navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+    <!--For collapsed navbar-->
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand navbar-brand-style" href="/grumblr/index.html">Grumblr</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/">Home</a></li>
+        <li><a href="#">Contact us</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">
+          <span class="glyphicon glyphicon-user"></span>
+          Profile<span class="caret"></span></a>
+          <ul class="dropdown-menu dropdown-menu-bg">
+            <li><a href="/grumblr/profile/aaa">Go to my page</a></li>
+            <li>
+              <a href="/grumblr/edit/">Edit</a>
+            </li>
+            <li>
+              <a href="/grumblr/friends_stream">My friends</a>
+            </li>
+            <li>
+              <a href="/change_password">Change Password</a>
+            </li>
+            <li>
+              <a href="/grumblr/logout">Log out</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="col-sm-4 text-center" >
+  <img src="/grumblr/profile_picture/aaa" class="img-circle user-profile-picture-style" alt="User picture" width="110" height="100">
+  <ul class="list-group list-group-style">
+    <li class="list-group-item">User Name: aaa</li>
+    <li class="list-group-item">First Name: aa</li>
+    <li class="list-group-item">Last Name: aaa</li>
+    <li class="list-group-item">age: 15    
+    </li>
+  </ul>
+  <p>Biology:</p>
+  <div class="well well-sm">aaa&#39;s bio</div>
+</div>
+
+<div class="col-sm-6">
+  <div class="container">
+    <form class="form-hrizontal form-group-default" action="/grumblr/edit/" enctype="multipart/form-data" method="post">
+
+        
+      <div class="form-group">
+        <label for="id_first_name">First name:</label>:
+      <div>
+        <input type="text" name="first_name" required id="id_first_name" maxlength="100" />
+      </div>
+      </div>
+        
+      <div class="form-group">
+        <label for="id_last_name">Last name:</label>:
+      <div>
+        <input type="text" name="last_name" required id="id_last_name" maxlength="100" />
+      </div>
+      </div>
+        
+      <div class="form-group">
+        <label for="id_age">Age:</label>:
+      <div>
+        <input type="number" name="age" id="id_age" />
+      </div>
+      </div>
+        
+      <div class="form-group">
+        <label for="id_bio">Bio:</label>:
+      <div>
+        <input type="text" name="bio" required id="id_bio" maxlength="420" />
+      </div>
+      </div>
+        
+      <div class="form-group">
+        <label for="id_picture">Picture:</label>:
+      <div>
+        <input type="file" name="picture" id="id_picture" />
+      </div>
+      </div>
+      
+
+      
+    
+
+      <div class="form-group text-center">
+        <div class="col-sm-offset-4 col-sm-4 text-aling:center">
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Edit</button>
+        </div>
+      </div>
+
+      <input type='hidden' name='csrfmiddlewaretoken' value='xQSRJBQeQH0tEvWGXqdeYaBrGfly4u39gCqYMJM7p60zxh16CHQzhlG9YN1oFWuD' />
+    </form> 
+
+  </div>
+</div>
+
+<div class="col-sm-2">
+  </div>
+
+
+</body>
+</html>

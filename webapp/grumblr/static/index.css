@@ -1,0 +1,78 @@
+.navbar-default {
+    background-color: #2BC2FA;
+    border-color: #2BC2FA;
+}
+.navbar-default .navbar-nav > li > a {
+    color: #FFFFFF;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+    background-color: #2BC2FA;
+    color: #FFFFFF;
+}
+
+.body-style{
+	margin-top:6.5rem;
+}
+
+.navbar-brand-style{
+	color: #2a2aa2; 
+	font-size: 27px;
+}
+
+.post-button-style{
+	margin-top: 0.8rem; 
+	background-color: #008ae6;
+}
+
+.camera-style{
+	float: right; 
+	margin-right: 4px;
+}
+
+.head-style{
+	margin:10px;
+}
+
+.panel-style{
+	max-width: 600px;
+}
+
+.thumb-num-style{
+	float:right; 
+	margin-bottom: 10px; 
+	margin-left: 2px; 
+	padding-bottom: 2px;
+}
+
+.heart-style{
+	float:right; 
+	margin-top: 2px;
+}
+
+.say-style{
+	margin-left: 8px; 
+	font-size: 160%; 
+	color:#8342f4;
+}
+
+.comment-style{
+	width: 600px; 
+	margin: 4px;
+}
+
+.post-button-style{
+	margin-left: 4px; 
+	width: 200px; 
+	background-color: #8342f4; 
+	border-color: #8342f4;
+}
+
+.hr-style{
+	background-color: #bdb5cc; 
+	height: 1px; 
+	margin-right: 12px
+}
+
+.profile-picture-style{
+	margin:15px;
+}

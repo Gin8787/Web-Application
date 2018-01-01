@@ -1,0 +1,65 @@
+{% extends "grumblr/base.html" %}
+{%block title%}Grumblr get reset email{%endblock%}
+{%block css%}
+  <link href="../../static/sign_up.css" rel="stylesheet">
+{%endblock%}
+
+{%block navbar%}
+<!--Nav bar-->
+<nav class="navbar-fixed-top bg-info navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <!--For collapsed navbar-->
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand navbar-brand-style" href="{% url 'home' %}">Grumblr</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="#">Contact us</a></li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="{% url 'login'%}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+{%endblock%}
+
+{% block content %}
+<div class="container" style="margin: 30px; text-align: center">
+	<h3>Please enter your registered email! </h3>
+</div>
+
+<div class="container">	
+  <form class="form-horizontal form-group-default" action="{% url 'get_reset_email' %}" method="post">
+  	{% for error in form.non_field_errors %}
+    <p class="error-style">{{error}}</p>
+    {% endfor %}
+
+    {% for field in form.visible_fields %}
+    <div class="col-sm-4 col-sm-offset-4">{{field.label_tag}}:</div>
+    
+    <div class="form-group">
+      
+      <div class="col-sm-4 col-sm-offset-4">          
+        <div class="input-textarear-style">{{field}}</div>
+      </div>
+    </div>
+    {% endfor %}
+
+    <div class="form-group text-center">        
+      <div class="col-sm-offset-4 col-sm-4 text-align: center">
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Start Reset Password</button>
+      </div>
+    </div>
+    {% csrf_token %}
+  </form>
+</div>
+  {% endblock %}

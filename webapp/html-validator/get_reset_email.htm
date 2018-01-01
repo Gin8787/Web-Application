@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Grumblr get reset email</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  
+  <link href="../../static/sign_up.css" rel="stylesheet">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body class="body-style">
+<!--Nav bar-->
+
+<!--Nav bar-->
+<nav class="navbar-fixed-top bg-info navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <!--For collapsed navbar-->
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand navbar-brand-style" href="/grumblr/index.html">Grumblr</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/grumblr/index.html">Home</a></li>
+        <li><a href="#">Contact us</a></li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/grumblr/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="container" style="margin: 30px; text-align: center">
+  <h3>Please enter your registered email! </h3>
+</div>
+
+<div class="container"> 
+  <form class="form-horizontal form-group-default" action="/get_reset_email" method="post">
+    
+
+    
+    <div class="col-sm-4 col-sm-offset-4"><label for="id_email">Email:</label>:</div>
+    
+    <div class="form-group">
+      
+      <div class="col-sm-4 col-sm-offset-4">          
+        <div class="input-textarear-style"><input type="text" name="email" required id="id_email" maxlength="50" /></div>
+      </div>
+    </div>
+    
+
+    <div class="form-group text-center">        
+      <div class="col-sm-offset-4 col-sm-4 text-align: center">
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Start Reset Password</button>
+      </div>
+    </div>
+    <input type='hidden' name='csrfmiddlewaretoken' value='myDgSBylQtXGnDkkgObQ6CMgzDH5xpfrerEvayJxeDUMmcfka8gMgEqjx40SbCT0' />
+  </form>
+</div>
+  
+
+</body>
+</html>
